@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>{ AR 8thWall ~ Three.js } Vite App ⚡️</title>
+
+    <!-- Not working either the scene swap with this three version -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script> -->
+
+    <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
+         See github.com/8thwall/web/tree/master/xrextras -->
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
+    <!-- 8thWall Web - Replace the app key here with your own app key -->
+    <script
+      async
+      src="//apps.8thwall.com/xrweb?appKey=%VITE_8THWALL_APP_KEY%"
+    ></script>
+  </head>
+  <body>
+    <div class="video-record-container">
+      <div class="face-container">
+        <img id="face-placeholder" src="/images/face-placeholder.png"></img>
+        <!-- <img id="face-placeholder" src="/images/tori-face-placeholder.png"></img> -->
+      </div>
+      <div class="video-record-bottom">
+        <button id="record-video-btn">
+        <svg class="record-icon" viewBox="0 0 24 24">
+          <path
+            d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"
+          />
+        </svg>
+      </button>
+      </div>
+    </div>
+
+    <div class="video-preview-container">
+      <video id="video-taken" autoplay muted playsinline loop></video>
+      <div class="video-preview-bottom">
+        <button id="retry-btn">
+          <svg class="retry-icon" viewBox="0 0 24 24">
+            <path
+              d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z"
+            />
+          </svg>
+        </button>
+        <button id="next-btn">
+          <svg class="next-icon" viewBox="0 0 24 24">
+            <path
+              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <canvas id="experience"></canvas>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>
